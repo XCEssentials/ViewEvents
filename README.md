@@ -1,2 +1,2 @@
-# MKH_iOS_ViewEvents
+# MKHViewEvents
 Set of helpers for setting event handlers for UIView-based controllers on iOS.
