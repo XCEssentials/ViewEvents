@@ -13,6 +13,7 @@ import UIKit
 public
 extension UIControl
 {
+    @discardableResult
     public
     func onTouchDown<T: Any>(_ handler: Selector, at target: T? = nil) -> Self
     {
@@ -26,6 +27,7 @@ extension UIControl
         return self
     }
     
+    @discardableResult
     public
     func onTouchDownRepeat<T: Any>(_ handler: Selector, at target: T? = nil) -> Self
     {
@@ -39,6 +41,7 @@ extension UIControl
         return self
     }
     
+    @discardableResult
     public
     func onTouchDragInside<T: Any>(_ handler: Selector, at target: T? = nil) -> Self
     {
@@ -52,6 +55,7 @@ extension UIControl
         return self
     }
     
+    @discardableResult
     public
     func onTouchDragOutside<T: Any>(_ handler: Selector, at target: T? = nil) -> Self
     {
@@ -65,6 +69,7 @@ extension UIControl
         return self
     }
     
+    @discardableResult
     public
     func onTouchDragEnter<T: Any>(_ handler: Selector, at target: T? = nil) -> Self
     {
@@ -78,6 +83,7 @@ extension UIControl
         return self
     }
     
+    @discardableResult
     public
     func onTouchDragExit<T: Any>(_ handler: Selector, at target: T? = nil) -> Self
     {
@@ -91,6 +97,7 @@ extension UIControl
         return self
     }
     
+    @discardableResult
     public
     func onTouchUpInside<T: Any>(_ handler: Selector, at target: T? = nil) -> Self
     {
@@ -104,6 +111,7 @@ extension UIControl
         return self
     }
     
+    @discardableResult
     public
     func onTouchUpOutside<T: Any>(_ handler: Selector, at target: T? = nil) -> Self
     {
@@ -117,6 +125,7 @@ extension UIControl
         return self
     }
     
+    @discardableResult
     public
     func onTouchCancel<T: Any>(_ handler: Selector, at target: T? = nil) -> Self
     {
@@ -130,6 +139,7 @@ extension UIControl
         return self
     }
     
+    @discardableResult
     public
     func onValueChanged<T: Any>(_ handler: Selector, at target: T? = nil) -> Self
     {
@@ -144,6 +154,7 @@ extension UIControl
     }
     
     @available(iOS 9.0, *)
+    @discardableResult
     public
     func onPrimaryActionTriggered<T: Any>(_ handler: Selector, at target: T? = nil) -> Self
     {
@@ -157,6 +168,7 @@ extension UIControl
         return self
     }
     
+    @discardableResult
     public
     func onEditingDidBegin<T: Any>(_ handler: Selector, at target: T? = nil) -> Self
     {
@@ -170,6 +182,7 @@ extension UIControl
         return self
     }
     
+    @discardableResult
     public
     func onEditingChanged<T: Any>(_ handler: Selector, at target: T? = nil) -> Self
     {
@@ -183,6 +196,7 @@ extension UIControl
         return self
     }
     
+    @discardableResult
     public
     func onEditingDidEnd<T: Any>(_ handler: Selector, at target: T? = nil) -> Self
     {
@@ -196,6 +210,7 @@ extension UIControl
         return self
     }
     
+    @discardableResult
     public
     func onEditingDidEndOnExit<T: Any>(_ handler: Selector, at target: T? = nil) -> Self
     {
@@ -209,6 +224,7 @@ extension UIControl
         return self
     }
     
+    @discardableResult
     public
     func onAllTouchEvents<T: Any>(_ handler: Selector, at target: T? = nil) -> Self
     {
@@ -222,6 +238,7 @@ extension UIControl
         return self
     }
     
+    @discardableResult
     public
     func onAllEditingEvents<T: Any>(_ handler: Selector, at target: T? = nil) -> Self
     {
@@ -235,6 +252,7 @@ extension UIControl
         return self
     }
     
+    @discardableResult
     public
     func onAllEvents<T: Any>(_ handler: Selector, at target: T? = nil) -> Self
     {
