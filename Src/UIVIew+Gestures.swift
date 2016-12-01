@@ -13,6 +13,7 @@ import UIKit
 public
 extension UIView
 {
+    @discardableResult
     public
     func onTapGesture<T: Any>(
         _ handler: Selector,
@@ -32,6 +33,7 @@ extension UIView
         return self
     }
     
+    @discardableResult
     public
     func onPinchGesture<T: Any>(
         _ handler: Selector,
@@ -51,6 +53,7 @@ extension UIView
         return self
     }
     
+    @discardableResult
     public
     func onPanGesture<T: Any>(
         _ handler: Selector,
@@ -70,6 +73,7 @@ extension UIView
         return self
     }
     
+    @discardableResult
     public
     func onSwipeGesture<T: Any>(
         _ handler: Selector,
@@ -89,6 +93,7 @@ extension UIView
         return self
     }
     
+    @discardableResult
     public
     func onLongPressGesture<T: Any>(
         _ handler: Selector,
