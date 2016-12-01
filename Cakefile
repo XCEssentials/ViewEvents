@@ -1,22 +1,26 @@
 # https://github.com/jcampbell05/xcake
 # http://www.rubydoc.info/github/jcampbell05/xcake/master/file/docs/Cakefile.md
 
-iOSdeploymentTarget = 8.0
-currentSwiftVersion = 3.0
+iOSdeploymentTarget = "8.0"
+currentSwiftVersion = "3.0.1"
+companyIdentifier = "khatskevich.maxim"
+developmentTeamId = "UJA88X59XP" # Personal team
 
 #===
 
 project.name = "MKHViewEvents"
 project.class_prefix = "VEV"
-project.organization = "CakeMania Inc."
+project.organization = "Maxim Khatskevich"
 
-#===
+#=== DEFAULT target settings
 
 project.all_configurations.each do |configuration|
 
+    # for all configurations
+
     configuration.settings["SDKROOT"] = "iphoneos"
     configuration.settings["DEBUG_INFORMATION_FORMAT"] = "dwarf"
-    configuration.settings["CODE_SIGN_IDENTITY[sdk=iphoneos*]"] = "iPhone Developer"
+    configuration.settings["CODE_SIGN_IDENTITY[sdk=iphoneos*]"] = ""
     configuration.settings["TARGETED_DEVICE_FAMILY"] = "1,2"
     configuration.settings["IPHONEOS_DEPLOYMENT_TARGET"] = iOSdeploymentTarget
     configuration.settings["VERSIONING_SYSTEM"] = "apple-generic"
@@ -31,11 +35,9 @@ project.all_configurations.each do |configuration|
 
     configuration.settings["CURRENT_PROJECT_VERSION"] = "1" # just default non-empty value
 
-    #=== Xcode 8:
-
-    configuration.settings["CLANG_WARN_INFINITE_RECURSION"] = "YES"
-    configuration.settings["CLANG_WARN_SUSPICIOUS_MOVE"] = "YES"
-    configuration.settings["ENABLE_STRICT_OBJC_MSGSEND"] = "YES"
+    configuration.settings["CLANG_WARN_INFINITE_RECURSION"] = "YES" # Xcode 8
+    configuration.settings["CLANG_WARN_SUSPICIOUS_MOVE"] = "YES" # Xcode 8
+    configuration.settings["ENABLE_STRICT_OBJC_MSGSEND"] = "YES" # Xcode 8
 
     #===
 
@@ -48,21 +50,7 @@ project.all_configurations.each do |configuration|
 
 end
 
-#===
-
-# Imagine we have project folder structure like this:
-    #
-    # - Cakefile
-    # - Info/
-    # | - CakeFamework.plist
-    # | - CakeFameworkTst.plist
-    # - Src/
-    # | - ...
-    # - Tst/
-    # | - ...
-    #
-
-#=== Targets
+#=== TARGETS
 
 target do |target|
 
@@ -72,59 +60,29 @@ target do |target|
     target.platform = :ios
     target.deployment_target = iOSdeploymentTarget
 
+    #=== CUSTOM settings for the target
+
     target.all_configurations.each do |configuration|
 
         #=== Build Settings - Core
 
-        configuration.product_bundle_identifier = "com.CakeMania." + target.name
+        configuration.product_bundle_identifier = companyIdentifier + "." + target.name
 
         configuration.settings["INFOPLIST_FILE"] = "Info/" + target.name + ".plist"
 
         configuration.settings["PRODUCT_NAME"] = "$(TARGET_NAME)"
 
         # Xcode 8 automati c signing support
-        configuration.settings["CODE_SIGN_IDENTITY[sdk=iphoneos*]"] = "iPhone Developer"
-        configuration.settings["DEVELOPMENT_TEAM"] = "XYZXYZ" # team ID
+        configuration.settings["CODE_SIGN_IDENTITY[sdk=iphoneos*]"] = ""
+        configuration.settings["DEVELOPMENT_TEAM"] = developmentTeamId
 
-        configuration.settings["SWIFT_VERSION"] = currentSwiftVersion.to_s # Xcode 8
+        configuration.settings["SWIFT_VERSION"] = currentSwiftVersion # Xcode 8
 
     end
 
     #=== Source Files
 
-    # assume all source files are located inside "/Src" folder and its subfolders
-
     target.include_files = ["Src/**/*.*"]
-
-    #=== Tests
-    
-    testSuffix = "Tst"
-
-    unit_tests_for target do |test_target|
-        
-        test_target.name = target.name + testSuffix
-        test_target.deployment_target = iOSdeploymentTarget
-
-        test_target.all_configurations.each do |configuration|
-
-            configuration.product_bundle_identifier = "com.CakeMania." + test_target.name
-
-            configuration.settings["INFOPLIST_FILE"] = "Info/" + test_target.name + ".plist"
-
-            configuration.settings["LD_RUNPATH_SEARCH_PATHS"] = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks"
-
-            # Xcode 8 automati c signing support
-            configuration.settings["CODE_SIGN_IDENTITY[sdk=iphoneos*]"] = "iPhone Developer"
-            configuration.settings["DEVELOPMENT_TEAM"] = "XYZXYZ" # team ID
-
-            configuration.settings["SWIFT_VERSION"] = currentSwiftVersion.to_s # Xcode 8
-
-        end
-
-        #=== Source Files
-
-        test_target.include_files = [testSuffix + "/**/*.*"]
-
-    end
+    target.include_files << "Src-Extra/**/*.*"
 
 end
