@@ -30,16 +30,39 @@ This library provides set of helper functions via extensions for `UIControl` and
 For example, here is how to add handler to `UIButton` instance `button` for `onTouchUpInside` ("tap") event (assume we have an appropriate function called `buttonTapHandler` on `self`):
 
 ```swift
-button.onTouchUpInside(
+button.onTouchUpInside.add(
   #selector(buttonTapHandler),
-  at: self
+  of: self
 )
 ```
 
-Here is how to to add gesture recognizer to a view (assume we have an appropriate function called `gestureHandler` on `self`):
+Alternatively, if `self` conforms to `HandlersOwner` protocol, the aboe example can be written like this:
 
 ```swift
-button.onTapGesture(#selector(gestureHandler), at: self){ gesture in
+self.bind(
+  #selector(buttonTapHandler),
+  with: button.onTouchUpInside
+)
+```
+
+
+
+## Gesture recognizers
+
+Same approach is used to bind handlers with gesture recognizers.
+
+For example, here is how to add handler to `UIImageView` instance `image` for "tap" gesture (assume we have an appropriate function called `tapGestureHandler` on `self`):
+
+```swift
+image.onTapGesture.addRecognizer(#selector(tapGestureHandler), of: self){ gesture in
+  // configure gesture here
+}
+```
+
+Alternatively, if `self` conforms to `HandlersOwner` protocol, the aboe example can be written like this:
+
+```swift
+self.bind(#selector(tapGestureHandler), with: image.onTapGesture){ gesture in
   // configure gesture here
 }
 ```
