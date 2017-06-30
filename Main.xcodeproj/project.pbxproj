@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		61AAED543BDA2E7ED3A246CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4336B137A5D485C83F9137AA /* Foundation.framework */; };
 		657A2802D450E34A58DD48A6 /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E810866FC37B2226211EAE1 /* Pods_Tests.framework */; };
-		73C643F6B2E5C0CC91015169 /* UIControl+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E3415C5B9A5D015A9BF85 /* UIControl+Base.swift */; };
-		A6D6A4F54D0652BDF34FA805 /* UIVIew+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C4F3F570CA1FEE6C6EA811 /* UIVIew+Gestures.swift */; };
+		941DAA7C1F06EF05005A5098 /* UIVIew+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DAA791F06EF05005A5098 /* UIVIew+Gestures.swift */; };
+		941DAA7E1F06EF27005A5098 /* PendingEventsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DAA7D1F06EF27005A5098 /* PendingEventsOperation.swift */; };
+		941DAA801F06F505005A5098 /* UIControl+Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DAA7F1F06F505005A5098 /* UIControl+Events.swift */; };
+		941DAA821F06F5A3005A5098 /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DAA811F06F5A3005A5098 /* Aliases.swift */; };
+		941DAA841F06F864005A5098 /* UIControl+EventAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DAA831F06F864005A5098 /* UIControl+EventAliases.swift */; };
+		941DAA881F07020F005A5098 /* PendingRecognizerOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DAA871F07020F005A5098 /* PendingRecognizerOperation.swift */; };
+		947FB8781F0706EB00D1FD4C /* HandlersOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947FB8771F0706EB00D1FD4C /* HandlersOwner.swift */; };
 		A95D48A771115E5299FF93C5 /* Pods_Fwk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D20333C8A965FF657013C66 /* Pods_Fwk.framework */; };
 		BA57B565123C0663B54E1E24 /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77538E6E29880A4FBAD8748E /* MainTests.swift */; };
 		CE6EDC19BA626C7A029DC014 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC0EAC6CA1C6BE8BABF0196 /* UIKit.framework */; };
 		CFBB2437CF62691E1D1FC605 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4336B137A5D485C83F9137AA /* Foundation.framework */; };
-		F98DB8D6480046405B479B31 /* UIControl+Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0285B352E75845FEE25D78 /* UIControl+Aliases.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,9 +56,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		14C4F3F570CA1FEE6C6EA811 /* UIVIew+Gestures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIVIew+Gestures.swift"; sourceTree = "<group>"; };
-		2F7E3415C5B9A5D015A9BF85 /* UIControl+Base.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIControl+Base.swift"; sourceTree = "<group>"; };
-		3C0285B352E75845FEE25D78 /* UIControl+Aliases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIControl+Aliases.swift"; sourceTree = "<group>"; };
 		4336B137A5D485C83F9137AA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		4D72DFE8B7C9B9DA1AC49D2E /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		5D20333C8A965FF657013C66 /* Pods_Fwk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fwk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,7 +63,14 @@
 		6E810866FC37B2226211EAE1 /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77538E6E29880A4FBAD8748E /* MainTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainTests.swift; sourceTree = "<group>"; };
 		8D671ACD46AFF90964B27D9B /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1C9BCC3E2CF34FDBF7849A2 /* Fwk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Fwk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		941DAA791F06EF05005A5098 /* UIVIew+Gestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIew+Gestures.swift"; sourceTree = "<group>"; };
+		941DAA7D1F06EF27005A5098 /* PendingEventsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingEventsOperation.swift; sourceTree = "<group>"; };
+		941DAA7F1F06F505005A5098 /* UIControl+Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+Events.swift"; sourceTree = "<group>"; };
+		941DAA811F06F5A3005A5098 /* Aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
+		941DAA831F06F864005A5098 /* UIControl+EventAliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+EventAliases.swift"; sourceTree = "<group>"; };
+		941DAA871F07020F005A5098 /* PendingRecognizerOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingRecognizerOperation.swift; sourceTree = "<group>"; };
+		947FB8771F0706EB00D1FD4C /* HandlersOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandlersOwner.swift; sourceTree = "<group>"; };
+		A1C9BCC3E2CF34FDBF7849A2 /* Fwk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Fwk.framework; path = XCEViewEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC0EAC6CA1C6BE8BABF0196 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		D373A7CBAE351DA30A11F045 /* Pods-Fwk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fwk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fwk/Pods-Fwk.release.xcconfig"; sourceTree = "<group>"; };
 		E9E3BE8D350E5FAF72E75562 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -105,7 +113,6 @@
 			children = (
 				77538E6E29880A4FBAD8748E /* MainTests.swift */,
 			);
-			name = Tests;
 			path = Tests;
 			sourceTree = SOURCE_ROOT;
 		};
@@ -129,6 +136,25 @@
 				F4E084E410284CF227C1B14A /* Sources */,
 				45C826A4EF50B017EBA9D68A /* Tests */,
 			);
+			sourceTree = "<group>";
+		};
+		941DAA751F06EF05005A5098 /* UIControlEvents */ = {
+			isa = PBXGroup;
+			children = (
+				941DAA7D1F06EF27005A5098 /* PendingEventsOperation.swift */,
+				941DAA831F06F864005A5098 /* UIControl+EventAliases.swift */,
+				941DAA7F1F06F505005A5098 /* UIControl+Events.swift */,
+			);
+			path = UIControlEvents;
+			sourceTree = "<group>";
+		};
+		941DAA781F06EF05005A5098 /* UIVIewGestures */ = {
+			isa = PBXGroup;
+			children = (
+				941DAA871F07020F005A5098 /* PendingRecognizerOperation.swift */,
+				941DAA791F06EF05005A5098 /* UIVIew+Gestures.swift */,
+			);
+			path = UIVIewGestures;
 			sourceTree = "<group>";
 		};
 		A9CB7716177CE46CA06D0547 /* Products */ = {
@@ -161,11 +187,11 @@
 		F4E084E410284CF227C1B14A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				3C0285B352E75845FEE25D78 /* UIControl+Aliases.swift */,
-				2F7E3415C5B9A5D015A9BF85 /* UIControl+Base.swift */,
-				14C4F3F570CA1FEE6C6EA811 /* UIVIew+Gestures.swift */,
+				941DAA811F06F5A3005A5098 /* Aliases.swift */,
+				947FB8771F0706EB00D1FD4C /* HandlersOwner.swift */,
+				941DAA751F06EF05005A5098 /* UIControlEvents */,
+				941DAA781F06EF05005A5098 /* UIVIewGestures */,
 			);
-			name = Sources;
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
 		};
@@ -300,7 +326,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-			showEnvVarsInLog = 1;
 		};
 		AF703D02DD85EF1DFD492CCA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -347,9 +372,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F98DB8D6480046405B479B31 /* UIControl+Aliases.swift in Sources */,
-				73C643F6B2E5C0CC91015169 /* UIControl+Base.swift in Sources */,
-				A6D6A4F54D0652BDF34FA805 /* UIVIew+Gestures.swift in Sources */,
+				941DAA821F06F5A3005A5098 /* Aliases.swift in Sources */,
+				947FB8781F0706EB00D1FD4C /* HandlersOwner.swift in Sources */,
+				941DAA7E1F06EF27005A5098 /* PendingEventsOperation.swift in Sources */,
+				941DAA881F07020F005A5098 /* PendingRecognizerOperation.swift in Sources */,
+				941DAA841F06F864005A5098 /* UIControl+EventAliases.swift in Sources */,
+				941DAA801F06F505005A5098 /* UIControl+Events.swift in Sources */,
+				941DAA7C1F06EF05005A5098 /* UIVIew+Gestures.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
