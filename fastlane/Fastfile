@@ -22,54 +22,164 @@ default_platform :ios
 
 #===
 
-projName = 'MKHViewEvents'
-projFileName = projName + '.xcodeproj'
+companyName = 'XCEssentials'
+companyPrefix = 'XCE'
+repoName = 'ViewEvents'
+repoURL = 'https://github.com/' + companyName + '/' + repoName
+moduleName = companyPrefix + repoName
+projName = 'Main' + '.xcodeproj'
+podspecFilePath = './' + moduleName + '.podspec'
+
+author = '"Maxim Khatskevich"'
+authorURL = 'https://github.com/maximkhatskevich'
 
 #===
 
 platform :ios do
 
-  lane :regenerate_project do
+  lane :finalize_release do
 
-    # default initial location for any command
-    # is inside 'Fastlane' folder
+    ensure_git_branch(
+      branch: 'release/*'
+    )
 
-    sh 'cd ./.. && xcake make'
+    # ===
+
+    ensure_git_status_clean
+
+    # ===
+
+    pod_lib_lint
+
+    # ===
+
+    versionNumber = get_version_number(xcodeproj: projName)
+    puts 'Current VERSION number: ' + versionNumber
+
+    # === Infer new version number
+
+    defaultNewVersion = git_branch.split('/').last
+
+    # === Define new version number
+
+    useInferredNEWVersionNumber = prompt(
+      text: 'Proceed with inferred NEW version number (' + defaultNewVersion + ')?',
+      boolean: true
+    )
+
+    if useInferredNEWVersionNumber
+
+      newVersionNumber = defaultNewVersion
+
+    else
+
+      newVersionNumber = prompt(text: 'New VERSION number:')
+
+    end
+    
+    # === Apply NEW version number and increment build number
+
+    increment_version_number(
+      xcodeproj: projName,
+      version_number: newVersionNumber
+    )
+
+    increment_build_number(
+      xcodeproj: projName
+    )
+
+    # ===
+
+    newBuildNumber = get_build_number(xcodeproj: projName)
+
+    commit_version_bump( # it will fail if more than version bump
+      xcodeproj: projName,
+      message: 'Version Bump to ' + newVersionNumber + ' (' + newBuildNumber + ')'
+    )
+
+    # ===
+
+    version_bump_podspec(
+      path: podspecFilePath,
+      version_number: newVersionNumber
+    )
+
+    git_commit(
+      path: podspecFilePath,
+      message: 'Version Bump to ' + newVersionNumber + ' in Podspec file'
+    )
 
   end
 
   # ===
 
-  lane :inc_version do
+  lane :regenerate_project do
 
-    ensure_git_status_clean
+    # === Remember current version and build numbers
 
-    # === Set basic parameters
+    versionNumber = get_version_number(xcodeproj: projName)
+    buildNumber = get_build_number(xcodeproj: projName)
 
-    buildNumber = get_build_number(xcodeproj: projFileName)
-    versionNumber = get_version_number(xcodeproj: projFileName)
+    # === Remove completely current project file/folder
+    
+    sh 'cd ./.. && rm -r ./' + projName
 
-    # === Request target version/build number
+    # === Regenerate project
 
-    puts 'Current VERSION number: ' + versionNumber
-    newVersionNumber = prompt(text: 'New VERSION number:')
+    # default initial location for any command
+    # is inside 'Fastlane' folder
 
-    puts 'Current BUILD number: ' + buildNumber
-    newBuildNumber = prompt(text: 'New BUILD number:')
+    sh 'cd ./.. && struct generate'
 
-    # === version bump
+    # === Set proper current version and build numbers
 
     increment_version_number(
-      xcodeproj: projFileName,
-      version_number: newVersionNumber
+      xcodeproj: projName,
+      version_number: versionNumber
     )
 
     increment_build_number(
-      xcodeproj: projFileName,
+      xcodeproj: projName,
+      build_number: buildNumber
+    )
+
+    # === Sort all project entries
+
+    sh 'cd ./.. && xcodeproj sort'
+
+    # === Add custom 'Run Script Phase' entries
+
+    sh 'cd ./.. && ruby ./Scripts/AfterReGenerateProject.rb ' + projName
+
+  end
+
+  # ===
+
+  lane :generate_project do
+
+    # === Generate project from scratch
+
+    # default initial location for any command
+    # is inside 'Fastlane' folder
+
+    sh 'cd ./.. && struct generate'
+
+    # === Set proper build number (proper version number is stored in the Info file)
+
+    newBuildNumber = prompt(text: 'Desired BUILD number:')
+
+    increment_build_number(
+      xcodeproj: projName,
       build_number: newBuildNumber
     )
 
-    commit_version_bump # it will fail if more than version bump
+    # === Sort all project entries
+
+    sh 'cd ./.. && xcodeproj sort'
+
+    # === Add custom 'Run Script Phase' entries
+
+    sh 'cd ./.. && ruby ./Scripts/AfterReGenerateProject.rb ' + projName
 
   end
 
