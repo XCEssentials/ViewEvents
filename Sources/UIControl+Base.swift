@@ -1,11 +1,3 @@
-//
-//  UIControl+Base.swift
-//  MKHViewEvents
-//
-//  Created by Maxim Khatskevich on 12/1/16.
-//  Copyright © 2016 Maxim Khatskevich. All rights reserved.
-//
-
 import UIKit
 
 //===
