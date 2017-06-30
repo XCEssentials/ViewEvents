@@ -43,6 +43,8 @@ let project = Project("Main") { project in
         
         target.include("Sources")
         
+        target.dependencies.fromSDK("UIKit.framework")
+        
         //---
         
         target.configurations.all.override(

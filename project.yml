@@ -22,6 +22,8 @@ targets:
   Fwk:
     platform: "ios"
     type: ":framework"
+    references:
+    - "sdkroot:UIKit.framework"
     sources:
     - "Sources"
     configurations:
