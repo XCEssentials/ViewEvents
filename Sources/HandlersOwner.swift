@@ -68,7 +68,7 @@ extension HandlersOwner
     
     @discardableResult
     public
-    func bind<Recognizer: UIGestureRecognizer>(
+    func bind<Recognizer>(
         _ handler: Selector,
         with gesture: PendingRecognizerOperation<Recognizer>,
         configuration: ((Recognizer) -> Void)
@@ -87,7 +87,7 @@ extension HandlersOwner
     
     @discardableResult
     public
-    func bind<Recognizer: UIGestureRecognizer>(
+    func bind<Recognizer>(
         _ handler: Selector,
         with gesture: PendingRecognizerOperation<Recognizer>
         ) -> Recognizer
