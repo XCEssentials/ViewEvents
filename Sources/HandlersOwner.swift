@@ -1,11 +1,11 @@
 import UIKit
 
-//===
+//---
 
 public
 protocol HandlersOwner: class { }
 
-//=== MARK: UIControl events support
+//--- MARK: UIControl events support
 
 public
 extension HandlersOwner
@@ -16,7 +16,7 @@ extension HandlersOwner
     {
         events.add(handler, of: self)
         
-        //===
+        //---
         
         return self
     }
@@ -27,7 +27,7 @@ extension HandlersOwner
     {
         events.remove(handler, of: self)
         
-        //===
+        //---
         
         return self
     }
@@ -38,13 +38,13 @@ extension HandlersOwner
     {
         events.removeAllHandlers(of: self)
         
-        //===
+        //---
         
         return self
     }
 }
 
-//=== MARK: UIView gesture recognizers support
+//--- MARK: UIView gesture recognizers support
 
 public
 extension HandlersOwner
@@ -61,7 +61,7 @@ extension HandlersOwner
             action: handler
         )
         
-        //===
+        //---
         
         return self
     }
@@ -80,7 +80,7 @@ extension HandlersOwner
             configuration: configuration
         )
         
-        //===
+        //---
         
         return self
     }
@@ -110,7 +110,7 @@ extension HandlersOwner
             action: handler
         )
         
-        //===
+        //---
         
         return self
     }
@@ -126,7 +126,7 @@ extension HandlersOwner
             action: nil
         )
         
-        //===
+        //---
         
         return self
     }

@@ -1,6 +1,6 @@
 import UIKit
 
-//===
+//---
 
 public
 typealias VEVPendingEventsOperation = PendingEventsOperation

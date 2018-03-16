@@ -1,6 +1,6 @@
 import UIKit
 
-//===
+//---
 
 public
 struct PendingEventsOperation
@@ -9,7 +9,7 @@ struct PendingEventsOperation
     let events: UIControlEvents
 }
 
-//===
+//---
 
 public
 extension PendingEventsOperation
@@ -24,7 +24,7 @@ extension PendingEventsOperation
             for: events
         )
         
-        //===
+        //---
         
         return source
     }
@@ -39,7 +39,7 @@ extension PendingEventsOperation
             for: events
         )
         
-        //===
+        //---
         
         return source
     }
@@ -54,7 +54,7 @@ extension PendingEventsOperation
             for: events
         )
         
-        //===
+        //---
         
         return source
     }
@@ -69,7 +69,7 @@ extension PendingEventsOperation
             for: events
         )
         
-        //===
+        //---
         
         return source
     }

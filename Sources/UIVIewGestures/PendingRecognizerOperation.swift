@@ -1,6 +1,6 @@
 import UIKit
 
-//===
+//---
 
 public
 struct PendingRecognizerOperation<Recognizer: UIGestureRecognizer>
@@ -8,7 +8,7 @@ struct PendingRecognizerOperation<Recognizer: UIGestureRecognizer>
     let source: UIView
 }
 
-//===
+//---
 
 public
 extension PendingRecognizerOperation
@@ -28,7 +28,7 @@ extension PendingRecognizerOperation
         configuration(recognizer)
         source.addGestureRecognizer(recognizer)
         
-        //===
+        //---
         
         return source
     }
@@ -46,7 +46,7 @@ extension PendingRecognizerOperation
         )
         source.addGestureRecognizer(recognizer)
         
-        //===
+        //---
         
         return recognizer
     }
