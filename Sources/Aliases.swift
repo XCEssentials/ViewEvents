@@ -29,6 +29,9 @@ import UIKit
 //---
 
 public
+typealias VEVPendingBarButtonOperation = PendingBarButtonOperation
+
+public
 typealias VEVPendingEventsOperation = PendingEventsOperation
 
 public
