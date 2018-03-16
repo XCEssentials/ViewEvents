@@ -17,7 +17,7 @@ extension PendingRecognizerOperation
     public
     func addRecognizer(
         with handler: Selector,
-        of target: Any,
+        of target: AnyObject,
         configuration: ((Recognizer) -> Void)
         ) -> UIView
     {
@@ -37,7 +37,7 @@ extension PendingRecognizerOperation
     public
     func addRecognizer(
         with handler: Selector,
-        of target: Any
+        of target: AnyObject
         ) -> Recognizer
     {
         let recognizer = Recognizer(

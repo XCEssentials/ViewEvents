@@ -16,7 +16,7 @@ extension PendingEventsOperation
 {
     @discardableResult
     public
-    func add<T: Any>(_ handler: Selector, of target: T) -> UIControl
+    func add<T: AnyObject>(_ handler: Selector, of target: T) -> UIControl
     {
         source.addTarget(
             target,
@@ -31,7 +31,7 @@ extension PendingEventsOperation
     
     @discardableResult
     public
-    func remove<T: Any>(_ handler: Selector, of target: T) -> UIControl
+    func remove<T: AnyObject>(_ handler: Selector, of target: T) -> UIControl
     {
         source.removeTarget(
             target,
@@ -46,7 +46,7 @@ extension PendingEventsOperation
     
     @discardableResult
     public
-    func removeAllHandlers<T: Any>(of target: T) -> UIControl
+    func removeAllHandlers<T: AnyObject>(of target: T) -> UIControl
     {
         source.removeTarget(
             target,
