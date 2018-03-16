@@ -95,8 +95,7 @@ extension UIControl
         )
     }
     
-    @available(iOS 9, *
-        )
+    @available(iOS 9, *)
     public
     var onPrimaryActionTriggered: PendingEventsOperation
     {
