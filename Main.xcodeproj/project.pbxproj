@@ -14,6 +14,8 @@
 		941DAA821F06F5A3005A5098 /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DAA811F06F5A3005A5098 /* Aliases.swift */; };
 		941DAA841F06F864005A5098 /* UIControl+EventAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DAA831F06F864005A5098 /* UIControl+EventAliases.swift */; };
 		941DAA881F07020F005A5098 /* PendingRecognizerOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DAA871F07020F005A5098 /* PendingRecognizerOperation.swift */; };
+		942E83C4205C0E0D001FA395 /* PendingBarButtonOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942E83C3205C0E0D001FA395 /* PendingBarButtonOperation.swift */; };
+		942E83C6205C0F77001FA395 /* UIBarButtonItem+PendingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942E83C5205C0F77001FA395 /* UIBarButtonItem+PendingOperation.swift */; };
 		947FB8781F0706EB00D1FD4C /* HandlersOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947FB8771F0706EB00D1FD4C /* HandlersOwner.swift */; };
 		A95D48A771115E5299FF93C5 /* Pods_Fwk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D20333C8A965FF657013C66 /* Pods_Fwk.framework */; };
 		CE6EDC19BA626C7A029DC014 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC0EAC6CA1C6BE8BABF0196 /* UIKit.framework */; };
@@ -44,6 +46,8 @@
 		941DAA811F06F5A3005A5098 /* Aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
 		941DAA831F06F864005A5098 /* UIControl+EventAliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+EventAliases.swift"; sourceTree = "<group>"; };
 		941DAA871F07020F005A5098 /* PendingRecognizerOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingRecognizerOperation.swift; sourceTree = "<group>"; };
+		942E83C3205C0E0D001FA395 /* PendingBarButtonOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingBarButtonOperation.swift; sourceTree = "<group>"; };
+		942E83C5205C0F77001FA395 /* UIBarButtonItem+PendingOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+PendingOperation.swift"; sourceTree = "<group>"; };
 		947FB8771F0706EB00D1FD4C /* HandlersOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandlersOwner.swift; sourceTree = "<group>"; };
 		A1C9BCC3E2CF34FDBF7849A2 /* XCEViewEvents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XCEViewEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC0EAC6CA1C6BE8BABF0196 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -114,6 +118,15 @@
 			path = UIVIewGestures;
 			sourceTree = "<group>";
 		};
+		942E83C2205C0DDD001FA395 /* UIBarButtonItem */ = {
+			isa = PBXGroup;
+			children = (
+				942E83C3205C0E0D001FA395 /* PendingBarButtonOperation.swift */,
+				942E83C5205C0F77001FA395 /* UIBarButtonItem+PendingOperation.swift */,
+			);
+			path = UIBarButtonItem;
+			sourceTree = "<group>";
+		};
 		A9CB7716177CE46CA06D0547 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +158,7 @@
 			children = (
 				941DAA811F06F5A3005A5098 /* Aliases.swift */,
 				947FB8771F0706EB00D1FD4C /* HandlersOwner.swift */,
+				942E83C2205C0DDD001FA395 /* UIBarButtonItem */,
 				941DAA751F06EF05005A5098 /* UIControlEvents */,
 				941DAA781F06EF05005A5098 /* UIVIewGestures */,
 			);
@@ -222,6 +236,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				941DAA821F06F5A3005A5098 /* Aliases.swift in Sources */,
+				942E83C6205C0F77001FA395 /* UIBarButtonItem+PendingOperation.swift in Sources */,
+				942E83C4205C0E0D001FA395 /* PendingBarButtonOperation.swift in Sources */,
 				947FB8781F0706EB00D1FD4C /* HandlersOwner.swift in Sources */,
 				941DAA7E1F06EF27005A5098 /* PendingEventsOperation.swift in Sources */,
 				941DAA881F07020F005A5098 /* PendingRecognizerOperation.swift in Sources */,
