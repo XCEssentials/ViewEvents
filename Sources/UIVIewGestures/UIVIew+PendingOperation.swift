@@ -29,51 +29,35 @@ import UIKit
 //---
 
 public
-struct PendingRecognizerOperation<Recognizer: UIGestureRecognizer>
+extension UIView
 {
-    let source: UIView
-}
-
-//---
-
-public
-extension PendingRecognizerOperation
-{
-    @discardableResult
     public
-    func addRecognizer(
-        with handler: Selector,
-        of target: AnyObject,
-        configuration: ((Recognizer) -> Void)
-        ) -> UIView
+    var onTapGesture: PendingRecognizerOperation<UITapGestureRecognizer>
     {
-        let recognizer = Recognizer(
-            target: target,
-            action: handler
-        )
-        configuration(recognizer)
-        source.addGestureRecognizer(recognizer)
-        
-        //---
-        
-        return source
+        return PendingRecognizerOperation(source: self)
     }
     
-    @discardableResult
     public
-    func addRecognizer(
-        with handler: Selector,
-        of target: AnyObject
-        ) -> Recognizer
+    var onPinchGesture: PendingRecognizerOperation<UIPinchGestureRecognizer>
     {
-        let recognizer = Recognizer(
-            target: target,
-            action: handler
-        )
-        source.addGestureRecognizer(recognizer)
-        
-        //---
-        
-        return recognizer
+        return PendingRecognizerOperation(source: self)
+    }
+    
+    public
+    var onPanGesture: PendingRecognizerOperation<UIPanGestureRecognizer>
+    {
+        return PendingRecognizerOperation(source: self)
+    }
+    
+    public
+    var onSwipeGesture: PendingRecognizerOperation<UISwipeGestureRecognizer>
+    {
+        return PendingRecognizerOperation(source: self)
+    }
+    
+    public
+    var onLongPressGesture: PendingRecognizerOperation<UILongPressGestureRecognizer>
+    {
+        return PendingRecognizerOperation(source: self)
     }
 }

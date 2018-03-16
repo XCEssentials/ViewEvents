@@ -29,51 +29,23 @@ import UIKit
 //---
 
 public
-struct PendingRecognizerOperation<Recognizer: UIGestureRecognizer>
+extension UIControl
 {
-    let source: UIView
-}
-
-//---
-
-public
-extension PendingRecognizerOperation
-{
-    @discardableResult
     public
-    func addRecognizer(
-        with handler: Selector,
-        of target: AnyObject,
-        configuration: ((Recognizer) -> Void)
-        ) -> UIView
+    var onTap: PendingEventsOperation
     {
-        let recognizer = Recognizer(
-            target: target,
-            action: handler
-        )
-        configuration(recognizer)
-        source.addGestureRecognizer(recognizer)
-        
-        //---
-        
-        return source
+        return onTouchDown
     }
     
-    @discardableResult
     public
-    func addRecognizer(
-        with handler: Selector,
-        of target: AnyObject
-        ) -> Recognizer
+    var onEdit: PendingEventsOperation
     {
-        let recognizer = Recognizer(
-            target: target,
-            action: handler
-        )
-        source.addGestureRecognizer(recognizer)
-        
-        //---
-        
-        return recognizer
+        return onEditingChanged
+    }
+    
+    public
+    var onExit: PendingEventsOperation
+    {
+        return onEditingDidEndOnExit
     }
 }

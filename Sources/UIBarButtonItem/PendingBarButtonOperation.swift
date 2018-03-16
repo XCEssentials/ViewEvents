@@ -29,51 +29,40 @@ import UIKit
 //---
 
 public
-struct PendingRecognizerOperation<Recognizer: UIGestureRecognizer>
+struct PendingBarButtonOperation
 {
-    let source: UIView
+    let source: UIBarButtonItem
 }
 
 //---
 
 public
-extension PendingRecognizerOperation
+extension PendingBarButtonOperation
 {
     @discardableResult
     public
-    func addRecognizer(
-        with handler: Selector,
-        of target: AnyObject,
-        configuration: ((Recognizer) -> Void)
-        ) -> UIView
+    func set<T: AnyObject>(
+        _ handler: Selector,
+        of target: T
+        ) -> UIBarButtonItem
     {
-        let recognizer = Recognizer(
-            target: target,
-            action: handler
-        )
-        configuration(recognizer)
-        source.addGestureRecognizer(recognizer)
-        
+        source.target = target
+        source.action = handler
+
         //---
-        
+
         return source
     }
-    
+
     @discardableResult
     public
-    func addRecognizer(
-        with handler: Selector,
-        of target: AnyObject
-        ) -> Recognizer
+    func removeHandler() -> UIBarButtonItem
     {
-        let recognizer = Recognizer(
-            target: target,
-            action: handler
-        )
-        source.addGestureRecognizer(recognizer)
-        
+        source.target = nil
+        source.action = nil
+
         //---
-        
-        return recognizer
+
+        return source
     }
 }

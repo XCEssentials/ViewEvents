@@ -29,51 +29,17 @@ import UIKit
 //---
 
 public
-struct PendingRecognizerOperation<Recognizer: UIGestureRecognizer>
+extension UIBarButtonItem
 {
-    let source: UIView
-}
-
-//---
-
-public
-extension PendingRecognizerOperation
-{
-    @discardableResult
+    /**
+     Allows to add handler which will be called when corresponding
+     bar button has been tapped.
+     */
     public
-    func addRecognizer(
-        with handler: Selector,
-        of target: AnyObject,
-        configuration: ((Recognizer) -> Void)
-        ) -> UIView
+    var onTap: PendingBarButtonOperation
     {
-        let recognizer = Recognizer(
-            target: target,
-            action: handler
+        return PendingBarButtonOperation(
+            source: self
         )
-        configuration(recognizer)
-        source.addGestureRecognizer(recognizer)
-        
-        //---
-        
-        return source
-    }
-    
-    @discardableResult
-    public
-    func addRecognizer(
-        with handler: Selector,
-        of target: AnyObject
-        ) -> Recognizer
-    {
-        let recognizer = Recognizer(
-            target: target,
-            action: handler
-        )
-        source.addGestureRecognizer(recognizer)
-        
-        //---
-        
-        return recognizer
     }
 }

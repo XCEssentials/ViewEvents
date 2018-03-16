@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
 
   s.name                      = companyPrefix + projName
   s.summary                   = projSummary
-  s.version                   = '1.1.0'
+  s.version                   = '1.1.1'
   s.homepage                  = companyGitHubAccount + '/' + projName
   
   s.documentation_url         = companyGitHubPage + '/' + projName
@@ -23,7 +23,6 @@ Pod::Spec.new do |s|
   s.requires_arc              = true
   
   s.frameworks                = 'UIKit'
-  # s.dependency                'AAA', '~> X.Y'
 
   s.license                   = { :type => 'MIT', :file => 'LICENSE' }
   s.author                    = { 'Maxim Khatskevich' => 'maxim@khatskevi.ch' }
