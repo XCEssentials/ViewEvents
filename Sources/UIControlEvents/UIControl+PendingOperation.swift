@@ -11,7 +11,6 @@ extension UIControl
         return PendingEventsOperation(
             source: self,
             events: .touchDown
-        
         )
     }
     

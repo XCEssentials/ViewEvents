@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		61AAED543BDA2E7ED3A246CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4336B137A5D485C83F9137AA /* Foundation.framework */; };
-		941DAA7C1F06EF05005A5098 /* UIVIew+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DAA791F06EF05005A5098 /* UIVIew+Gestures.swift */; };
+		941DAA7C1F06EF05005A5098 /* UIVIew+PendingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DAA791F06EF05005A5098 /* UIVIew+PendingOperation.swift */; };
 		941DAA7E1F06EF27005A5098 /* PendingEventsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DAA7D1F06EF27005A5098 /* PendingEventsOperation.swift */; };
-		941DAA801F06F505005A5098 /* UIControl+Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DAA7F1F06F505005A5098 /* UIControl+Events.swift */; };
+		941DAA801F06F505005A5098 /* UIControl+PendingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DAA7F1F06F505005A5098 /* UIControl+PendingOperation.swift */; };
 		941DAA821F06F5A3005A5098 /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DAA811F06F5A3005A5098 /* Aliases.swift */; };
-		941DAA841F06F864005A5098 /* UIControl+EventAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DAA831F06F864005A5098 /* UIControl+EventAliases.swift */; };
+		941DAA841F06F864005A5098 /* UIControl+PendingOperationAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DAA831F06F864005A5098 /* UIControl+PendingOperationAliases.swift */; };
 		941DAA881F07020F005A5098 /* PendingRecognizerOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DAA871F07020F005A5098 /* PendingRecognizerOperation.swift */; };
 		942E83C4205C0E0D001FA395 /* PendingBarButtonOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942E83C3205C0E0D001FA395 /* PendingBarButtonOperation.swift */; };
 		942E83C6205C0F77001FA395 /* UIBarButtonItem+PendingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942E83C5205C0F77001FA395 /* UIBarButtonItem+PendingOperation.swift */; };
@@ -40,11 +40,11 @@
 		5D20333C8A965FF657013C66 /* Pods_Fwk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fwk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF1B162B0BD4338F6428EDB /* Pods-Fwk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fwk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fwk/Pods-Fwk.debug.xcconfig"; sourceTree = "<group>"; };
 		6E810866FC37B2226211EAE1 /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		941DAA791F06EF05005A5098 /* UIVIew+Gestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIew+Gestures.swift"; sourceTree = "<group>"; };
+		941DAA791F06EF05005A5098 /* UIVIew+PendingOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIew+PendingOperation.swift"; sourceTree = "<group>"; };
 		941DAA7D1F06EF27005A5098 /* PendingEventsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingEventsOperation.swift; sourceTree = "<group>"; };
-		941DAA7F1F06F505005A5098 /* UIControl+Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+Events.swift"; sourceTree = "<group>"; };
+		941DAA7F1F06F505005A5098 /* UIControl+PendingOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+PendingOperation.swift"; sourceTree = "<group>"; };
 		941DAA811F06F5A3005A5098 /* Aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
-		941DAA831F06F864005A5098 /* UIControl+EventAliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+EventAliases.swift"; sourceTree = "<group>"; };
+		941DAA831F06F864005A5098 /* UIControl+PendingOperationAliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+PendingOperationAliases.swift"; sourceTree = "<group>"; };
 		941DAA871F07020F005A5098 /* PendingRecognizerOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingRecognizerOperation.swift; sourceTree = "<group>"; };
 		942E83C3205C0E0D001FA395 /* PendingBarButtonOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingBarButtonOperation.swift; sourceTree = "<group>"; };
 		942E83C5205C0F77001FA395 /* UIBarButtonItem+PendingOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+PendingOperation.swift"; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				941DAA7D1F06EF27005A5098 /* PendingEventsOperation.swift */,
-				941DAA831F06F864005A5098 /* UIControl+EventAliases.swift */,
-				941DAA7F1F06F505005A5098 /* UIControl+Events.swift */,
+				941DAA831F06F864005A5098 /* UIControl+PendingOperationAliases.swift */,
+				941DAA7F1F06F505005A5098 /* UIControl+PendingOperation.swift */,
 			);
 			path = UIControlEvents;
 			sourceTree = "<group>";
@@ -113,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				941DAA871F07020F005A5098 /* PendingRecognizerOperation.swift */,
-				941DAA791F06EF05005A5098 /* UIVIew+Gestures.swift */,
+				941DAA791F06EF05005A5098 /* UIVIew+PendingOperation.swift */,
 			);
 			path = UIVIewGestures;
 			sourceTree = "<group>";
@@ -241,9 +241,9 @@
 				947FB8781F0706EB00D1FD4C /* HandlersOwner.swift in Sources */,
 				941DAA7E1F06EF27005A5098 /* PendingEventsOperation.swift in Sources */,
 				941DAA881F07020F005A5098 /* PendingRecognizerOperation.swift in Sources */,
-				941DAA841F06F864005A5098 /* UIControl+EventAliases.swift in Sources */,
-				941DAA801F06F505005A5098 /* UIControl+Events.swift in Sources */,
-				941DAA7C1F06EF05005A5098 /* UIVIew+Gestures.swift in Sources */,
+				941DAA841F06F864005A5098 /* UIControl+PendingOperationAliases.swift in Sources */,
+				941DAA801F06F505005A5098 /* UIControl+PendingOperation.swift in Sources */,
+				941DAA7C1F06EF05005A5098 /* UIVIew+PendingOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
